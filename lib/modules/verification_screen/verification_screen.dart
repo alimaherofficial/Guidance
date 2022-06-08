@@ -38,9 +38,13 @@ class VerificationScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
+                height: 20,
+              ),
+              SizedBox(
                 height: 250,
                 width: 250,
-                child: SvgPicture.asset('assets/images/verification.svg'),
+                child: SvgPicture.asset(
+                    'assets/images/undraw_two_factor_authentication_namy.svg'),
               ),
               const Text(
                 'Verification',

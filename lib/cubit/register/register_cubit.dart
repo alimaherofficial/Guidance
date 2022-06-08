@@ -3,11 +3,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:guidance/cubit/register/register_ststes.dart'; 
+import 'package:guidance/cubit/register/register_ststes.dart';
 
 class RegisterCubit extends Cubit<RegisterStates> {
   RegisterCubit() : super(RegisterInitialState());
   static RegisterCubit get(context) => BlocProvider.of(context);
+  String? dropdownValue1;
+
+  void changeDropDown(String? newValue) {
+    dropdownValue1 = newValue!;
+    emit(ChangeDropDownState());
+  }
 
   void onRegister({
     @required String? email,

@@ -8,6 +8,7 @@ import 'package:guidance/cubit/menu/menu_cubit.dart';
 import 'package:guidance/cubit/menu/menu_states.dart';
 import 'package:guidance/cubit/menu_price/cubit.dart';
 import 'package:guidance/cubit/menu_price/stastes.dart';
+import 'package:guidance/modules/verification_screen/verification_screen.dart';
 import 'package:guidance/modules/welcome_screen/welcome_screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: const WelcomeScreen(),
+          home: const VerificationScreen(),
         ),
       ),
     );

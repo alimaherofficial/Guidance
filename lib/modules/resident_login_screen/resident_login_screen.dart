@@ -4,11 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:guidance/cubit/login/login_cubit.dart';
 import 'package:guidance/cubit/login/login_ststes.dart';
-import 'package:guidance/modules/SignUp_Screen/SignUp_Screen.dart';
+import 'package:guidance/layout/home_layout.dart';
+import 'package:guidance/modules/resident_SignUp_Screen/resident_SignUp_Screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class ResidentLoginScreen extends StatelessWidget {
+  const ResidentLoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +37,12 @@ class LoginScreen extends StatelessWidget {
               actions: [
                 TextButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const HomeScreen(),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeLayout(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Skip',
@@ -72,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                       // add username text field
                       const SizedBox(height: 20),
                       const Text(
-                        'login now to get your offer',
+                        'Offering help',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
@@ -154,12 +155,12 @@ class LoginScreen extends StatelessWidget {
                               password: passwordcontroller.text,
                             );
                             if (state is loginSuccessState) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const SignUpScreen(),
-                                ),
-                              );
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => const SignUpScreen(),
+                              //   ),
+                              // );
                             }
                           }
                         },
@@ -191,7 +192,8 @@ class LoginScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const SignUpScreen(),
+                                  builder: (context) =>
+                                      const ResidentSignUpScreen(),
                                 ),
                               );
                             },

@@ -6,11 +6,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:guidance/cubit/register/register_cubit.dart';
 import 'package:guidance/cubit/register/register_ststes.dart';
-import 'package:guidance/modules/login_screen/login_screen.dart';
+import 'package:guidance/layout/home_layout.dart';
+import 'package:guidance/modules/expatriate_login_screen/expatriate_login_screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class ResidentSignUpScreen extends StatelessWidget {
+  const ResidentSignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +33,12 @@ class SignUpScreen extends StatelessWidget {
               actions: [
                 TextButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const HomeScreen(),
-                      //   ),
-                      // );
-                      // FocusManager.instance.primaryFocus?.unfocus();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeLayout(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Skip',
@@ -70,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
                     // add username text field
                     const SizedBox(height: 10),
                     const Text(
-                      'Sign Up now to get your offer',
+                      'Offering help',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
@@ -89,7 +89,7 @@ class SignUpScreen extends StatelessWidget {
                           return null;
                         },
                         decoration: InputDecoration(
-                          labelText: 'First Name',
+                          labelText: 'Full Name',
                           labelStyle: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
@@ -117,7 +117,7 @@ class SignUpScreen extends StatelessWidget {
                           return null;
                         },
                         decoration: InputDecoration(
-                          labelText: 'Last Name',
+                          labelText: 'Phone Number',
                           labelStyle: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
@@ -126,7 +126,7 @@ class SignUpScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           prefixIcon: Icon(
-                            Icons.person,
+                            Icons.phone,
                             color: appColor,
                           ),
                         ),
@@ -190,6 +190,76 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: TextFormField(
+                        // controller: passwordcontroller,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+
+                        decoration: InputDecoration(
+                          labelText: 'nationality',
+                          labelStyle: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          prefixIcon: Icon(
+                            Icons.perm_identity,
+                            color: appColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: TextFormField(
+                        // controller: passwordcontroller,
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+
+                        decoration: InputDecoration(
+                          labelText: 'Language',
+                          labelStyle: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          prefixIcon: Icon(
+                            Icons.language,
+                            color: appColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: TextFormField(
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Location',
+                          labelStyle: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          prefixIcon: Icon(
+                            Icons.location_on,
+                            color: appColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     MaterialButton(
                       onPressed: () {
                         if (emailcontroller.text.isEmpty ||
@@ -246,7 +316,8 @@ class SignUpScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const LoginScreen(),
+                                builder: (context) =>
+                                    const ExpatriateLoginScreen(),
                               ),
                             );
                           },
