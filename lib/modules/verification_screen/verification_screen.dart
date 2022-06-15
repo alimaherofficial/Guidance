@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:guidance/modules/enable_location/enable_location.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
 class VerificationScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class VerificationScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -91,12 +92,12 @@ class VerificationScreen extends StatelessWidget {
                       fontSize: 16.0,
                     );
                   } else {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const SetLocation(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EnableLocation(),
+                      ),
+                    );
                   }
                 },
                 color: appColor,
@@ -123,13 +124,15 @@ class VerificationScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // // push to SignUpScreen
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const SetLocation(),
-                      //   ),
-                      // );
+                      Fluttertoast.showToast(
+                        msg: 'we will send you a new code',
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.grey,
+                        textColor: Colors.white,
+                        fontSize: 16.0,
+                      );
                     },
                     child: Text(
                       'Resend',

@@ -5,6 +5,7 @@ import 'package:guidance/modules/ask_questions/ask_questions.dart';
 import 'package:guidance/modules/home_screen/home_screen.dart';
 import 'package:guidance/modules/questions_screen/questions_screen.dart';
 import 'package:guidance/modules/web_view_screen/web_view_screen.dart';
+import 'package:location/location.dart';
 
 class AppCubit extends Cubit<AppStates> {
   AppCubit() : super(AppInitialState());
@@ -62,6 +63,18 @@ class AppCubit extends Cubit<AppStates> {
     emit(AppCustomTileExpandedState());
   }
 
+  bool customTileExpanded5 = false;
+  void changeCustomTileExpanded5(bool value) {
+    customTileExpanded5 = value;
+    emit(AppCustomTileExpandedState());
+  }
+
+  bool customTileExpanded6 = false;
+  void changeCustomTileExpanded6(bool value) {
+    customTileExpanded6 = value;
+    emit(AppCustomTileExpandedState());
+  }
+
   onTapLink(String? url) {
     TextButton(
         onPressed: () {
@@ -69,4 +82,40 @@ class AppCubit extends Cubit<AppStates> {
         },
         child: Text(url!));
   }
+
+  Location? location = Location();
+
+  bool? serviceEnabled;
+  PermissionStatus? permissionGranted;
+  LocationData? locationData;
+
+  void serviceEnabled1() async {
+    serviceEnabled = await location!.serviceEnabled();
+    if (!serviceEnabled!) {
+      emit(AppserviceEnabled1State());
+      serviceEnabled = await location!.requestService();
+      if (!serviceEnabled!) {
+        emit(AppserviceEnabled1State());
+        return;
+      }
+    }
+  }
+
+  void permissionGranted1() async {
+    permissionGranted = await location!.hasPermission();
+    if (permissionGranted == PermissionStatus.denied) {
+      emit(ApppermissionGranted1State());
+      permissionGranted = await location!.requestPermission();
+      if (permissionGranted != PermissionStatus.granted) {
+        emit(ApppermissionGranted1State());
+        return;
+      }
+    }
+  }
+
+  void getLocation() async {
+    locationData = await location!.getLocation();
+  }
+// locationData = await location.getLocation();
+
 }

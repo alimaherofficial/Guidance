@@ -11,7 +11,7 @@ class QuestionsScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 50,
+              height: 70,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -24,7 +24,8 @@ class QuestionsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text('Where can I get some?',
+                    Text(
+                        ' Will I spend a lot of money here in South Korea? I mean is it an expensive country?',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -37,7 +38,7 @@ class QuestionsScreen extends StatelessWidget {
               height: 10,
             ),
             Container(
-              height: 150,
+              height: 110,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -51,7 +52,7 @@ class QuestionsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: const [
                     Text(
-                      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+                      ' It depends, I mean any country is expensive but here the food  and other stuff are also affordable. You just have to know where to spend you money. ',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -68,7 +69,7 @@ class QuestionsScreen extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 50,
+              height: 110,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -81,7 +82,8 @@ class QuestionsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text('Where can I get some?',
+                    Text(
+                        ' How do I experience ancient Korean culture here? I am curious about it and I would to love to learn more by doing some activities in the country itself.',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -94,7 +96,7 @@ class QuestionsScreen extends StatelessWidget {
               height: 10,
             ),
             Container(
-              height: 150,
+              height: 175,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -108,7 +110,7 @@ class QuestionsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: const [
                     Text(
-                      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+                      'There are some classes you can try out, like crafting Tal masks, making Hanji wood bark paper, learning Jultagi tightrope walking, and trying out Janggu drumming. It’s a few but they are fun and you will learn a lot about the culture because of them. ',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -125,7 +127,7 @@ class QuestionsScreen extends StatelessWidget {
               height: 20,
             ),
             Container(
-              height: 50,
+              height: 70,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -138,7 +140,7 @@ class QuestionsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: const [
-                    Text('Where can I get some?',
+                    Text('Is there any Egyptian gathering that happens here? ',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
@@ -165,7 +167,7 @@ class QuestionsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: const [
                     Text(
-                      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.',
+                      ' Hi, Hope you are doing just fine! I am Amira. I am from Egypt and yes there are gathering and events happening near you in Seodaemun at Seodaemun independent park and there will be lots of Egyptians! I hope you can make it.',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,

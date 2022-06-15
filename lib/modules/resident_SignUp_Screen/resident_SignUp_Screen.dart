@@ -8,6 +8,7 @@ import 'package:guidance/cubit/register/register_cubit.dart';
 import 'package:guidance/cubit/register/register_ststes.dart';
 import 'package:guidance/layout/home_layout.dart';
 import 'package:guidance/modules/expatriate_login_screen/expatriate_login_screen.dart';
+import 'package:guidance/modules/verification_screen/verification_screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
 class ResidentSignUpScreen extends StatelessWidget {
@@ -195,7 +196,7 @@ class ResidentSignUpScreen extends StatelessWidget {
                       child: TextFormField(
                         // controller: passwordcontroller,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        // obscureText: true,
 
                         decoration: InputDecoration(
                           labelText: 'nationality',
@@ -219,7 +220,7 @@ class ResidentSignUpScreen extends StatelessWidget {
                       child: TextFormField(
                         // controller: passwordcontroller,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        // obscureText: true,
 
                         decoration: InputDecoration(
                           labelText: 'Language',
@@ -242,7 +243,7 @@ class ResidentSignUpScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        // obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Location',
                           labelStyle: const TextStyle(
@@ -280,12 +281,12 @@ class ResidentSignUpScreen extends StatelessWidget {
                               email: emailcontroller.text,
                               password: passwordcontroller.text);
                           // push to HomeScreen
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const VerificationScreen(),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const VerificationScreen(),
+                            ),
+                          );
                         }
                       },
                       color: appColor,

@@ -51,7 +51,7 @@ class AskqQestions extends StatelessWidget {
               suffixIcon: IconButton(
                 icon: const Icon(
                   Icons.send,
-                  color: Colors.grey,
+                  color: Colors.blue,
                 ),
                 onPressed: () {
                   Fluttertoast.showToast(

@@ -151,16 +151,26 @@ class ResidentLoginScreen extends StatelessWidget {
                             );
                           } else {
                             cubit.onlogin(
-                              email: emailcontroller.text,
-                              password: passwordcontroller.text,
-                            );
+                                email: emailcontroller.text,
+                                password: passwordcontroller.text);
                             if (state is loginSuccessState) {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => const SignUpScreen(),
-                              //   ),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeLayout(),
+                                ),
+                              );
+                            } else if (state is loginErrorState) {
+                              Fluttertoast.showToast(
+                                msg: state.error.toString(),
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.grey,
+                                textColor: Colors.white,
+                                fontSize: 16.0,
+                              );
+                              // cubit.emitstate(loginInitialState());
                             }
                           }
                         },

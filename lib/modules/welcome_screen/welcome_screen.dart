@@ -15,21 +15,21 @@ class WelcomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Welcome'),
         centerTitle: true,
-          actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeLayout(),
-                        ),
-                      );
-                    },
-                    child: const Text(
-                      'Skip',
-                      style: TextStyle(color: Colors.white),
-                    )),
-              ],
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomeLayout(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Skip',
+                style: TextStyle(color: Colors.white),
+              )),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(14.0),
@@ -70,11 +70,11 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                     child: MaterialButton(
                       onPressed: () {
-                          Navigator.push(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ResidentLoginScreen()
-                          ),
+                              builder: (context) =>
+                                  const ResidentLoginScreen()),
                         );
                       },
                       color: appColor,

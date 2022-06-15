@@ -8,6 +8,7 @@ import 'package:guidance/cubit/register/register_cubit.dart';
 import 'package:guidance/cubit/register/register_ststes.dart';
 import 'package:guidance/layout/home_layout.dart';
 import 'package:guidance/modules/expatriate_login_screen/expatriate_login_screen.dart';
+import 'package:guidance/modules/verification_screen/verification_screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
 
 class ExpatriateSignUpScreen extends StatelessWidget {
@@ -39,7 +40,6 @@ class ExpatriateSignUpScreen extends StatelessWidget {
                           builder: (context) => const HomeLayout(),
                         ),
                       );
-                     
                     },
                     child: const Text(
                       'Skip',
@@ -198,8 +198,8 @@ class ExpatriateSignUpScreen extends StatelessWidget {
                       child: TextFormField(
                         // controller: passwordcontroller,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
-                        
+                        // obscureText: true,
+
                         decoration: InputDecoration(
                           labelText: 'nationality',
                           labelStyle: const TextStyle(
@@ -222,8 +222,8 @@ class ExpatriateSignUpScreen extends StatelessWidget {
                       child: TextFormField(
                         // controller: passwordcontroller,
                         keyboardType: TextInputType.text,
-                        obscureText: true,
-                     
+                        // obscureText: true,
+
                         decoration: InputDecoration(
                           labelText: 'Language',
                           labelStyle: const TextStyle(
@@ -245,7 +245,7 @@ class ExpatriateSignUpScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
                         keyboardType: TextInputType.text,
-                        obscureText: true,
+                        // obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Destination',
                           labelStyle: const TextStyle(
@@ -282,13 +282,13 @@ class ExpatriateSignUpScreen extends StatelessWidget {
                           cubit.onRegister(
                               email: emailcontroller.text,
                               password: passwordcontroller.text);
-                          // push to HomeScreen
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const VerificationScreen(),
-                          //   ),
-                          // );
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const VerificationScreen(),
+                            ),
+                          );
                         }
                       },
                       color: appColor,

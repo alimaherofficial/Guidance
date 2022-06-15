@@ -35,5 +35,8 @@ class LoginCubit extends Cubit<loginStates>
             });
   }
   
+  void emitstate(loginStates state) {
+    emit(state);
+  }
 
 }
