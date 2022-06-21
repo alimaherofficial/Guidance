@@ -1,8 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:guidance/cubit/app_cubit/cubit.dart';
-import 'package:guidance/cubit/app_cubit/stastes.dart';
 import 'package:guidance/cubit/bloc_observer.dart';
 import 'package:guidance/modules/welcome_screen/welcome_screen.dart';
 import 'package:guidance/styles/colors/colors.dart';
@@ -24,21 +22,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppCubit(),
-      child: BlocListener<AppCubit, AppStates>(
-        listener: (context, state) {
-        },
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: appColor,
-            scaffoldBackgroundColor: Colors.white,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
-          home: const WelcomeScreen(),
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: appColor,
+        scaffoldBackgroundColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: const WelcomeScreen(),
     );
   }
 }

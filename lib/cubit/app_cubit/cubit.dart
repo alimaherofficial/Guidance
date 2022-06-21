@@ -1,6 +1,11 @@
+// ignore_for_file: avoid_print
+
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guidance/cubit/app_cubit/stastes.dart';
+import 'package:guidance/models/model.dart';
 import 'package:guidance/modules/ask_questions/ask_questions.dart';
 import 'package:guidance/modules/home_screen/home_screen.dart';
 import 'package:guidance/modules/questions_screen/questions_screen.dart';
@@ -39,8 +44,12 @@ class AppCubit extends Cubit<AppStates> {
     emit(AppBottomNavState());
   }
 
+  List<bool> ahmed = [false, false, false, false, false, false];
+
+  List<Function> changeCustomTileExpanded = [];
+
   bool customTileExpanded1 = false;
-  void changeCustomTileExpanded1(bool value) {
+  changeCustomTileExpanded1(bool value) {
     customTileExpanded1 = value;
     emit(AppCustomTileExpandedState());
   }
@@ -116,6 +125,28 @@ class AppCubit extends Cubit<AppStates> {
   void getLocation() async {
     locationData = await location!.getLocation();
   }
-// locationData = await location.getLocation();
 
+// locationData = await location.getLocation();
+  List<Model> model=[] ;
+
+  void getData() {
+    emit(getdataloadingState());
+    FirebaseFirestore.instance.collection('guidance').get().then(
+      (value) {
+        // ignore: avoid_function_literals_in_foreach_calls
+        value.docs.forEach(
+          (element) {
+            model.add(Model.fromJson(element.data()));
+          },
+        );
+        emit(getdatasuccessState());
+        print(model[0].title);
+      },
+    ).catchError(
+      (error) {
+        emit(getdataerorrState(error.toString()));
+        print(error.toString());
+      },
+    );
+  }
 }
