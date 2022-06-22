@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:guidance/styles/colors/colors.dart';
 
 class QuestionsScreen extends StatelessWidget {
   const QuestionsScreen({Key? key}) : super(key: key);
@@ -176,6 +178,50 @@ class QuestionsScreen extends StatelessWidget {
                       textAlign: TextAlign.justify,
                     ),
                   ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextFormField(
+              // controller: firstnamecontroller,
+              keyboardType: TextInputType.name,
+
+              validator: (String? value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your question';
+                }
+                return null;
+              },
+
+              decoration: InputDecoration(
+                labelText: 'Respond to the question',
+                labelStyle: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 16,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                prefixIcon: Icon(
+                  Icons.question_answer_outlined,
+                  color: appColor,
+                ),
+                suffixIcon: IconButton(
+                  icon: const Icon(
+                    Icons.send,
+                    color: Colors.blue,
+                  ),
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                      msg: 'submitted your answer',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0,
+                    );
+                  },
                 ),
               ),
             ),

@@ -30,7 +30,7 @@ class AskqQestions extends StatelessWidget {
 
             validator: (String? value) {
               if (value!.isEmpty) {
-                return 'Please enter your first name';
+                return 'Please enter your question';
               }
               return null;
             },
@@ -55,7 +55,7 @@ class AskqQestions extends StatelessWidget {
                 ),
                 onPressed: () {
                   Fluttertoast.showToast(
-                    msg: 'Check your internet connection',
+                    msg: 'submitted your question',
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.BOTTOM,
                     timeInSecForIosWeb: 1,
