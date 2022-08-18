@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                               );
                             },
                             separatorBuilder: (context, index) =>
-                                SizedBox(height: 12),
+                                const SizedBox(height: 12),
                             itemCount: cubit.model.length,
                           ),
                         ),

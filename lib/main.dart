@@ -8,6 +8,7 @@ import 'package:guidance/styles/colors/colors.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  
 
   BlocOverrides.runZoned(
     () {
